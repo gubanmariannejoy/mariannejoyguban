@@ -1,0 +1,44 @@
+---
+// Header.astro
+const navItems = [
+  { name: 'Home', href: '#home' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'About', href: '#about' },
+  { name: 'Services', href: '#services' },
+  { name: 'Contact', href: '#contact' },
+];
+---
+
+<header class="w-full bg-[#0a0a0a] text-white px-8 py-5 flex items-center justify-between">
+  <!-- Brand Logo / Title -->
+  <a href="#home" class="text-[#8c5a32] font-semibold text-lg tracking-wider hover:opacity-90 transition-opacity">
+    MIRAE STUDY CAFE
+  </a>
+
+  <!-- Center Replay Button -->
+  <div class="flex-1 flex justify-center px-4">
+    <button 
+      type="button" 
+      class="px-6 py-1.5 border border-[#6e4624] text-white text-sm font-normal rounded-md hover:bg-[#6e4624]/20 transition-colors cursor-pointer"
+      onclick="window.location.reload()"
+    >
+      Replay
+    </button>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav>
+    <ul class="flex items-center space-x-7 text-sm">
+      {navItems.map((item) => (
+        <li>
+          <a 
+            href={item.href} 
+            class="text-stone-200 hover:text-[#8c5a32] transition-colors"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
