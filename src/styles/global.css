@@ -1,1 +1,305 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+        @theme {
+            --color-primary: #8B5E3C;
+            --color-secondary: #000000;
+            --color-white: #FFFFFF;
+        }
+
+        @layer components {
+
+            /* NAVIGATION */
+            .navbar {
+                @apply flex flex-col items-center justify-between
+                gap-5 px-8 py-5 bg-white
+                sm:flex-row sm:gap-0
+                dark:bg-secondary;
+            }
+
+            .logo {
+                @apply text-xl font-bold text-primary;
+            }
+
+            .nav-links {
+                @apply flex flex-wrap justify-center gap-6;
+            }
+
+            .nav-link {
+                @apply text-secondary transition-colors
+                hover:text-primary
+                dark:text-white dark:hover:text-primary;
+            }
+
+            /* HERO SECTION */
+            /* HERO SECTION - GLASSMORPHISM */
+.hero {
+    @apply relative flex min-h-[85vh] flex-col items-center
+    justify-center overflow-hidden px-6 py-20 text-center
+    bg-secondary;
+
+    background-image:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(139, 94, 60, 0.30),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(139, 94, 60, 0.20),
+            transparent 40%
+        );
+}
+/* HERO CONTENT */
+.hero-content {
+    @apply relative z-10 mx-auto max-w-4xl
+    rounded-3xl border border-white/20
+    px-6 py-12 sm:px-12 sm:py-16;
+
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+.hero-badge {
+    @apply mb-6 inline-block rounded-full
+    border border-primary px-5 py-2
+    text-sm font-semibold tracking-wide text-primary;
+}
+
+.hero-title {
+    @apply mb-6 text-4xl font-bold
+    leading-tight text-white sm:text-6xl;
+}
+
+.hero-title span {
+    @apply text-primary;
+}
+
+.hero-text {
+    @apply mx-auto mb-8 max-w-3xl
+    text-base leading-8 text-white/80 sm:text-lg;
+}
+
+/* HERO BUTTONS */
+.hero .btn-primary {
+    @apply inline-block rounded-xl border border-primary
+    bg-primary px-7 py-4 font-semibold text-white
+    transition-all duration-300 hover:-translate-y-1
+    hover:bg-primary/80;
+}
+
+.hero .btn-secondary {
+    @apply inline-block rounded-xl border border-primary
+    px-7 py-4 font-semibold text-white
+    transition-all duration-300 hover:-translate-y-1
+    hover:bg-primary/20;
+}
+
+            /* BUTTONS */
+            .btn-primary {
+                @apply inline-block rounded-lg bg-primary
+                px-6 py-3 font-semibold text-white
+                transition-colors hover:bg-secondary;
+            }
+
+            .btn-secondary {
+                @apply inline-block rounded-lg border-2
+                border-primary px-6 py-3 font-semibold
+                text-primary transition-colors hover:bg-primary
+                hover:text-white dark:text-white;
+            }
+
+            /* GENERAL SECTION */
+            .section {
+                @apply px-6 py-20 sm:px-12;
+            }
+
+            .section-title {
+                @apply mb-4 text-center text-3xl
+                font-bold text-secondary dark:text-white;
+            }
+
+            .section-description {
+                @apply mx-auto mb-12 max-w-2xl
+                text-center leading-8 text-secondary
+                dark:text-white;
+            }
+
+            /* PROJECTS */
+            .project-grid {
+                @apply mx-auto grid max-w-6xl
+                grid-cols-1 gap-8 md:grid-cols-2
+                lg:grid-cols-3;
+            }
+
+            .project-card {
+                @apply overflow-hidden border border-primary
+                bg-white shadow-md transition-transform
+                hover:-translate-y-2 dark:bg-secondary;
+            }
+
+            .project-image {
+                @apply h-48 w-full object-cover;
+            }
+
+            .project-content {
+                @apply p-6;
+            }
+
+            .project-title {
+                @apply mb-3 text-xl font-bold text-primary;
+            }
+
+            .project-text {
+                @apply mb-5 leading-7 text-secondary
+                dark:text-white;
+            }
+
+            /* ABOUT */
+            .about-container {
+                @apply mx-auto grid max-w-6xl
+                grid-cols-1 items-center gap-10
+                md:grid-cols-2;
+            }
+
+            .about-title {
+                @apply mb-5 text-3xl font-bold text-primary;
+            }
+
+            .about-text {
+                @apply mb-5 leading-8 text-secondary
+                dark:text-white;
+            }
+
+            .about-box {
+                @apply border-2 border-primary p-8
+                text-center;
+            }
+
+            .about-box-title {
+                @apply mb-4 text-2xl font-bold text-primary;
+            }
+
+            /* SERVICES */
+            .service-grid {
+                @apply mx-auto grid max-w-6xl
+                grid-cols-1 gap-8 md:grid-cols-2
+                lg:grid-cols-3;
+            }
+
+            .service-card {
+                @apply border border-primary bg-white
+                p-8 text-center shadow-md
+                transition-transform hover:-translate-y-2
+                dark:bg-secondary;
+            }
+
+            .service-number {
+                @apply mb-4 text-4xl font-bold text-primary;
+            }
+
+            .service-title {
+                @apply mb-4 text-xl font-bold text-secondary
+                dark:text-white;
+            }
+
+            .service-text {
+                @apply leading-7 text-secondary
+                dark:text-white;
+            }
+
+            /* CONTACT */
+            .contact-container {
+                @apply mx-auto grid max-w-6xl
+                grid-cols-1 gap-10 md:grid-cols-2;
+            }
+
+            .contact-info {
+                @apply border border-primary p-8;
+            }
+
+            .contact-title {
+                @apply mb-5 text-2xl font-bold text-primary;
+            }
+
+            .contact-text {
+                @apply mb-5 leading-7 text-secondary
+                dark:text-white;
+            }
+
+            .contact-form {
+                @apply flex flex-col gap-5;
+            }
+
+            .form-label {
+                @apply mb-2 block font-semibold
+                text-secondary dark:text-white;
+            }
+
+            .form-input {
+                @apply w-full border border-primary
+                bg-white p-3 text-secondary outline-none
+                focus:ring-2 focus:ring-primary
+                dark:bg-secondary dark:text-white;
+            }
+
+            /* FOOTER */
+            .footer {
+                @apply border-t-2 border-primary bg-secondary
+                px-6 py-12 text-white sm:px-12;
+            }
+
+            .footer-container {
+                @apply mx-auto max-w-6xl;
+            }
+
+            .footer-grid {
+                @apply grid grid-cols-1 gap-10
+                sm:grid-cols-2 lg:grid-cols-3;
+            }
+
+            .footer-logo {
+                @apply inline-block text-xl font-bold
+                tracking-wide text-white transition-colors
+                hover:text-primary;
+            }
+
+            .footer-copy {
+                @apply mt-4 max-w-sm text-sm leading-7
+                text-white/70;
+            }
+
+            .footer-heading {
+                @apply mb-4 border-l-2 border-primary pl-3
+                text-sm font-bold uppercase tracking-widest
+                text-white;
+            }
+
+            .footer-links {
+                @apply flex flex-col items-start gap-3;
+            }
+
+            .footer-link {
+                @apply text-sm text-white/70 transition-colors
+                hover:text-primary;
+            }
+
+            .footer-cta {
+                @apply mt-5 inline-flex items-center gap-2
+                rounded-lg bg-primary px-4 py-3 text-sm
+                font-semibold text-white transition-colors
+                hover:bg-white hover:text-secondary;
+            }
+
+            .footer-bottom {
+                @apply mt-10 flex flex-col gap-3 border-t
+                border-white/15 pt-6 text-sm text-white/60
+                sm:flex-row sm:items-center sm:justify-between;
+            }
+        }

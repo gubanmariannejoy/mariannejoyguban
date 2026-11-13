@@ -1,9 +1,18 @@
 ---
 import BaseLayout from '../layout/BaseLayout.astro';
 import '../styles/global.css';
+import About from './index/sections/About.astro';
+import Contact from './index/sections/Contact.astro';
+import Hero from './index/sections/Hero.astro';
+import Projects from './index/sections/Projects.astro';
+import Services from './index/sections/Services.astro';
 ---
 
 
 <BaseLayout>
-<h1 class="text-red-800">Marianne </h1>
+<Hero/>
+<About/>
+<Projects/>
+<Services/>
+<Contact/>
 </BaseLayout>

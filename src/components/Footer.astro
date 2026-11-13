@@ -1,68 +1,35 @@
----
-// Footer.astro
-const exploreLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'About us', href: '#about' },
-  { name: 'Services', href: '#services' },
-];
----
+<!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#home" class="footer-logo">MIRAE STUDY CAFE</a>
+                    <p> Good Coffee , Good Mood</p>
+                </div>
 
-<footer class="w-full bg-[#0a0a0a] text-white pt-12 pb-8 px-8">
-  <div class="max-w-7xl mx-auto">
-    <!-- Top Grid Section -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
-      <!-- Column 1: Brand Info -->
-      <div class="space-y-2">
-        <h3 class="font-bold text-white text-lg tracking-wider">
-          MIRAE STUDY CAFE
-        </h3>
-        <p class="text-stone-300 text-sm">
-          Good Coffee , Good Mood
-        </p>
-      </div>
+                <nav aria-label="Footer navigation">
+                    <h2 class="footer-heading">Explore</h2>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#projects" class="footer-link">Projects</a></li>
+                        <li><a href="#about" class="footer-link">About us</a></li>
+                        <li><a href="#services" class="footer-link">Services</a></li>
+                    </ul>
+                </nav>
 
-      <!-- Column 2: Explore Links -->
-      <div>
-        <div class="flex items-center space-x-2 mb-4">
-          <span class="w-1 h-4 bg-[#8c5a32] block"></span>
-          <h4 class="font-bold text-xs uppercase tracking-wider text-white">
-            EXPLORE
-          </h4>
+                <div>
+                    <h2 class="footer-heading">Come say hello</h2>
+                    <p class="footer-copy">
+                        Have a question or an idea to share? We would love to hear
+                        from you.
+                    </p>
+                    
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mirae Study Cafe. All rights reserved.</p>
+                <a href="#home" class="footer-link"></a>
+            </div>
         </div>
-        <ul class="space-y-3 text-sm">
-          {exploreLinks.map((link) => (
-            <li>
-              <a 
-                href={link.href} 
-                class="text-stone-300 hover:text-[#8c5a32] transition-colors"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Column 3: Contact Info -->
-      <div>
-        <div class="flex items-center space-x-2 mb-4">
-          <span class="w-1 h-4 bg-[#8c5a32] block"></span>
-          <h4 class="font-bold text-xs uppercase tracking-wider text-white">
-            COME SAY HELLO
-          </h4>
-        </div>
-        <p class="text-stone-300 text-sm leading-relaxed max-w-sm">
-          Have a question or an idea to share? We would love to hear from you.
-        </p>
-      </div>
-    </div>
-
-    <!-- Bottom Divider & Copyright -->
-    <div class="border-t border-stone-800 pt-6">
-      <p class="text-xs text-stone-400">
-        &copy; 2026 Mirae Study Cafe. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
+    </footer>

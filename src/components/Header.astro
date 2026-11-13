@@ -1,44 +1,20 @@
----
-// Header.astro
-const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Contact', href: '#contact' },
-];
----
+<div id="progressBar" class="fixed top-0 left-0 z-50 h-1 w-full origin-left bg-yellow-100"></div>
+<header>
+        <nav class="navbar">
 
-<header class="w-full bg-[#0a0a0a] text-white px-8 py-5 flex items-center justify-between">
-  <!-- Brand Logo / Title -->
-  <a href="#home" class="text-[#8c5a32] font-semibold text-lg tracking-wider hover:opacity-90 transition-opacity">
-    MIRAE STUDY CAFE
-  </a>
+            <a href="#home" class="logo">
+                MIRAE STUDY CAFE
+            </a>
+        <button id="replayBtn" type="button" class="btn-secondary">
+            Replay
+        </button>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
 
-  <!-- Center Replay Button -->
-  <div class="flex-1 flex justify-center px-4">
-    <button 
-      type="button" 
-      class="px-6 py-1.5 border border-[#6e4624] text-white text-sm font-normal rounded-md hover:bg-[#6e4624]/20 transition-colors cursor-pointer"
-      onclick="window.location.reload()"
-    >
-      Replay
-    </button>
-  </div>
-
-  <!-- Navigation Links -->
-  <nav>
-    <ul class="flex items-center space-x-7 text-sm">
-      {navItems.map((item) => (
-        <li>
-          <a 
-            href={item.href} 
-            class="text-stone-200 hover:text-[#8c5a32] transition-colors"
-          >
-            {item.name}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </nav>
-</header>
+        </nav>
+    </header>
